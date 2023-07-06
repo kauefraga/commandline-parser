@@ -1,5 +1,5 @@
 #include <iostream>
-#include "cli-parser.h"
+#include "cli.h"
 #include "colors.h"
 
 int main(int argc, char* argv[]) {

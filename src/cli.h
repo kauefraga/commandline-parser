@@ -48,26 +48,3 @@ public:
     }
   }
 };
-
-namespace cli {
-  std::vector<std::string> parse_arguments(int argument_count, char* argument_vector[]) {
-    // Loop through the arguments vector
-    std::vector<std::string> arguments = { };
-    std::vector<std::string> flags = { };
-
-    for (int i = 0; i < argument_count; i++) {
-      // Verify if the argument starts with '-' (is a flag)
-      std::string argument = argument_vector[i];
-
-      if (argument.find('-') == 0) {
-        flags.push_back(argument.substr(1, argument.size()));
-
-        continue;
-      }
-
-      arguments.push_back(argument);
-    }
-
-    return arguments;
-  }
-}
