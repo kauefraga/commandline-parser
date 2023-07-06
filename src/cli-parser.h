@@ -2,21 +2,24 @@
 #include <vector>
 
 namespace cli {
+  /// @todo pass by reference both parameters
+  /// @brief A function that takes an argument list and parse it. 
+  /// @param argument_count - The number of arguments. Normally referred as argc.
+  /// @param argument_vector - The list of arguments. Usually referred as argv.
+  /// @returns A list of the arguments that exists.
   std::vector<std::string> parse_arguments(int argument_count, char* argument_vector[]) {
-    // If the program has only one parameter (executable path), return it
-    /* std::string program;
-
-    if (argument_count <= 1) {
-      for (int i = 0; i < argument_count; i++) {
-        std::cout << "This feature is not implemented yet..." << '\n';
-      }
-    } */
-
     // Loop through the arguments vector
     std::vector<std::string> arguments = { };
 
     for (int i = 0; i < argument_count; i++) {
-      arguments.push_back(argument_vector[i]);
+      // Verify if the argument starts with '-' (is a flag)
+      std::string argument = argument_vector[i];
+
+      if (argument.find('-') == 0) {
+        continue;
+      }
+
+      arguments.push_back(argument);
     }
 
     return arguments;
