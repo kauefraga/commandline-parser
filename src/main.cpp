@@ -9,9 +9,21 @@ int main(int argc, char* argv[]) {
     std::cout << "Argument #" << i + 1 << ": " << argv[i] << '\n';
   }
 
-  std::vector<std::string> arguments = cli::parse_arguments(argc, argv);
+  std::cout << "-------------------" << '\n';
+  std::cout << "After CLI we got: " << '\n';
 
-  std::cout << arguments.at(0) << '\n';
+  Cli cli(argc, argv);
+
+  // All the arguments
+  for (std::string argument : cli.arguments) {
+    std::cout << argument << '\n';
+  }
+
+  // Only the flags
+  for (std::string flag : cli.flags) {
+    std::cout << flag << '\n';
+  }
+
 
   return 0;
 }
