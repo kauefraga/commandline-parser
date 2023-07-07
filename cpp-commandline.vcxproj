@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{a7c2fbbf-f412-4135-89fb-1bd8edca2224}</ProjectGuid>
-    <RootNamespace>commandlineparser</RootNamespace>
+    <RootNamespace>cppcommandline</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>cpp-commandline</ProjectName>
   </PropertyGroup>
