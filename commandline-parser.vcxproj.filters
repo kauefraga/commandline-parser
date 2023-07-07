@@ -26,7 +26,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\cli-parser.h">
+    <ClInclude Include="src\cli.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\colors.h">

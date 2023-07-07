@@ -156,7 +156,7 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\cli-parser.h" />
+    <ClInclude Include="src\cli.h" />
     <ClInclude Include="src\colors.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
