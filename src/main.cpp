@@ -2,33 +2,29 @@
 #include "cli.h"
 #include "colors.h"
 
-void* operator new(size_t bytes) {
-  std::cout << "Allocate " << bytes << " bytes" << '\n';
-  return malloc(bytes);
-}
-
 int main(int argc, char* argv[]) {
-  std::cout << "Simply looping through argv and printing it out" << '\n';
-  std::cout << "How many arguments are there? " << argc << '\n';
-
-  for (int i = 0; i < argc; i++) {
-    std::cout << "Argument #" << i + 1 << ": " << argv[i] << '\n';
+  if (argc <= 1) {
+    std::cout << "Usage: [name].exe [options]" << '\n';
+    std::cout << "  -help (boolean)" << '\n';
+      
+    return 1;
   }
 
-  std::cout << "-------------------" << '\n';
-  std::cout << "Using the command line parser: " << '\n';
-
-  Cli cli(argc, argv);
+  Cli cli(argc, argv, "C++ Command Line", "1.0.0");
 
   // All the arguments
-  for (std::string argument : cli.arguments) {
+  for (std::string argument : cli.get_arguments()) {
+    if (argument == "-help") {
+      std::cout << "HERE IS YOUR HELP MY FRIEND" << '\n';
+    }
+
     std::cout << fore::green << argument << style::reset << '\n';
   }
 
   std::cout << "-------------------" << '\n';
 
   // Only the flags
-  for (std::string flag : cli.flags) {
+  for (std::string flag : cli.get_flags()) {
     std::cout << fore::yellow << flag << style::reset << '\n';
   }
 
