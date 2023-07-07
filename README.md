@@ -1,6 +1,5 @@
-# Command Line Parser
-
-> 🧶 A command line (CLI) parser that will help you building your command line application.
+# Command Line Library
+> 🧶 A command line (CLI) library that will help you to build your command line applications with out of the box.
 
 ### Features
 
@@ -18,8 +17,8 @@
 
 ```bash
 # (1)
-git clone https://github.com/kauefraga/commandline-parser.git
-cd commandline-parser
+git clone https://github.com/kauefraga/cpp-commandline.git
+cd cpp-commandline
 
 # (2)
 cp src/cli.h ../path/to/your/project
@@ -36,7 +35,7 @@ Example: include the library in your code, then use the class to parse the given
 ```cpp
 // Input: main.exe "Hiiii" -number 23
 
-#include "../path/to/commandline-parser/cli.h" // includes <vector> and <string>
+#include "../path/to/cpp-commandline/cli.h" // includes <vector> and <string>
 
 int main(int argc, char* argv[]) {
   Cli cli(argc, argv);
@@ -57,7 +56,7 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-Expect:
+Expected:
 
 ```bash
 # main.exe "Hiiii" -number 23
@@ -92,4 +91,4 @@ These are the contents that i consume to develop this library:
 
 ## 📝 License
 
-This project is licensed under the MIT License - See the [LICENSE](https://github.com/kauefraga/commandline-parser/blob/main/LICENSE) for more information.
+This project is licensed under the MIT License - See the [LICENSE](https://github.com/kauefraga/cpp-commandline/blob/main/LICENSE) for more information.
