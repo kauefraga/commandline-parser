@@ -36,7 +36,6 @@ private:
   /// @param argument_vector - The list of arguments. Usually referred as argv.
   void parse_arguments(int& arguments_count, char* arguments_vector[]);
 
-  /// @brief A method that takes an argument vector, parse it and store the flags.
-  /// @param arguments - A vector with arguments.
-  void parse_flags(std::vector<std::string>& arguments);
+  /// @brief A method that uses the argument vector, parse it and store the flags.
+  void parse_flags();
 };

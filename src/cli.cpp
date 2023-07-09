@@ -24,7 +24,7 @@ Cli::Cli(
   m_version = version;
 
   parse_arguments(arguments_count, arguments_vector);
-  parse_flags(m_arguments);
+  parse_flags();
 }
 
 int Cli::get_arguments_count() {
@@ -48,14 +48,15 @@ std::string Cli::get_version() {
 }
 
 /* ----- PRIVATE ----- */
+
 void Cli::parse_arguments(int& arguments_count, char* arguments_vector[]){
   for (int i = 0; i < arguments_count; i++) {
     m_arguments.push_back(arguments_vector[i]);
   }
 }
 
-void Cli::parse_flags(std::vector<std::string>& arguments) {
-  for (std::string argument : arguments) {
+void Cli::parse_flags() {
+  for (std::string argument : m_arguments) {
     if (is_flag(argument)) {
       m_flags.push_back(argument);
 
