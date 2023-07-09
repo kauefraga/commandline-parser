@@ -3,14 +3,15 @@
 #include "colors.h"
 
 int main(int argc, char* argv[]) {
-  if (argc <= 1) {
+  Cli cli(argc, argv, "C++ Command Line", "1.0.0");
+
+  if (cli.get_arguments_count() <= 1) {
+    std::cout << "> " << cli.get_name() << " " << cli.get_version() << '\n';
     std::cout << "Usage: [name].exe [options]" << '\n';
     std::cout << "  -help (boolean)" << '\n';
       
     return 1;
   }
-
-  Cli cli(argc, argv, "C++ Command Line", "1.0.0");
 
   // All the arguments
   for (std::string argument : cli.get_arguments()) {
